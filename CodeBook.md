@@ -1,8 +1,8 @@
-### Description
+## Description
 Additional information about the variables, data and transformations used in the course project  week-3 assignment "Getting and 
 Cleaning Data" course.
 
-### Data Set Information
+## Data Set Information
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six 
 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the 
 waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant 
@@ -15,8 +15,7 @@ components, was separated using a Butterworth low-pass filter into body accelera
 have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was 
 obtained by calculating variables from the time and frequency domain.
 
-For each record it is provided:
-======================================
+##For each record it is provided:
 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
@@ -24,7 +23,7 @@ For each record it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-###The Following are the Steps performed for creation of the R Script - run_analysis.R
+##The Following are the Steps performed for creation of the R Script - run_analysis.R
 
 ##Step 1:
 
@@ -48,21 +47,21 @@ For each record it is provided:
 - Then we combine the both Test and Train merged data sets to form a new overall dataset which contains the data from both the above 
    said data
 
-###Step 3:  Extract only the measurements on the mean and standard deviation for each measurement
+##Step 3:  Extract only the measurements on the mean and standard deviation for each measurement
 
 - Use Regular Expression functions to search for column names which match with 'mean' and 'standard deviation'
 - Subset that data to the ones which is required
 
-###Step 4: Use descriptive activity names to name the activities in the data set
+##Step 4: Use descriptive activity names to name the activities in the data set
 
 - Combine the Overall Test Data with respective Activity Names
 - Arranged columns in the finalData Table to be readable
 
-###Step 5: Appropriately label the data set with descriptive activity names
+##Step 5: Appropriately label the data set with descriptive activity names
 
 - Use gsub function for pattern replacement to clean up the data labels.
 
-###Step 6: Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+##Step 6: Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 - Use ddply function of plyr package to find column means
 - Export the tidy_mean_data to tidyData.txt
