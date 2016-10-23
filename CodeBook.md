@@ -27,9 +27,10 @@ For each record it is provided:
 ###The Following are the Steps performed for creation of the R Script - run_analysis.R
 
 ##Step 1:
--> Downloading the Dataset.
--> Unzip dataSet to /Cleaning Data directory
--> Read in the data from files :
+
+- Downloading the Dataset.
+- Unzip dataSet to /Cleaning Data directory
+- Read in the data from files :
     - features.txt
     - activity_labels.txt
     - subject_train.txt
@@ -38,10 +39,32 @@ For each record it is provided:
     - subject_test.txt
     - x_test.txt
     - y_test.txt
--> Assigning Column Names to the data from above files
+- Assigning Column Names to the data from above files
 
 ##Step 2: Merge the training and the test sets to create one data set
--> First we merge the Test Folder files
--> Next we merge the Train Folder Files
--> Then we combine the both Test and Train merged data sets to form a new overall dataset which contains the data from both the above 
+
+- First we merge the Test Folder files
+- Next we merge the Train Folder Files
+- Then we combine the both Test and Train merged data sets to form a new overall dataset which contains the data from both the above 
    said data
+
+###Step 3:  Extract only the measurements on the mean and standard deviation for each measurement
+
+- Use Regular Expression functions to search for column names which match with 'mean' and 'standard deviation'
+- Subset that data to the ones which is required
+
+###Step 4: Use descriptive activity names to name the activities in the data set
+
+- Combine the Overall Test Data with respective Activity Names
+- Arranged columns in the finalData Table to be readable
+
+###Step 5: Appropriately label the data set with descriptive activity names
+
+- Use gsub function for pattern replacement to clean up the data labels.
+
+###Step 6: Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+- Use ddply function of plyr package to find column means
+- Export the tidy_mean_data to tidyData.txt
+
+
