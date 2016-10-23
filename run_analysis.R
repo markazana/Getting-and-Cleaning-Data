@@ -105,7 +105,7 @@ for (i in 1:length(colNames))
 
 tidy_mean_data <- ddply(finalData, .(subjectId, activityId, activity_name), function(x) colMeans(x[, 4:564]))   #Use ddply function of plyr package to find column means
 
-write.table(tidy_mean_data, './Cleaning Data/UCI HAR Dataset/tidyData.txt',row.names=TRUE,sep='\t')       #Export the tidy_mean_data to tidyData.txt
+write.table(tidy_mean_data, './Cleaning Data/UCI HAR Dataset/tidyData.txt',row.names=FALSE,sep='\t')       #Export the tidy_mean_data to tidyData.txt
 
 
 
